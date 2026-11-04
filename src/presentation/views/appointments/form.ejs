@@ -1,0 +1,42 @@
+<%- include('../partials/header', { pageTitle }) %>
+<section class="narrow">
+  <p class="eyebrow">Agenda</p>
+  <h1><%= pageTitle %></h1>
+  <p class="muted">Os campos marcados como obrigatórios precisam ser preenchidos.</p>
+
+  <% if (errors.length > 0) { %>
+    <div class="alert" role="alert" aria-live="polite">
+      <% errors.forEach((error) => { %><p><%= error %></p><% }) %>
+    </div>
+  <% } %>
+
+  <form action="<%= action %>" method="post">
+    <div class="field">
+      <label for="clientName">Nome do cliente <span aria-hidden="true">*</span></label>
+      <input id="clientName" name="clientName" type="text" value="<%= appointment.clientName %>" autocomplete="name" required>
+    </div>
+    <div class="field">
+      <label for="service">Serviço <span aria-hidden="true">*</span></label>
+      <input id="service" name="service" type="text" value="<%= appointment.service %>" required>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="appointmentDate">Data <span aria-hidden="true">*</span></label>
+        <input id="appointmentDate" name="appointmentDate" type="date" value="<%= appointment.appointmentDate %>" required>
+      </div>
+      <div class="field">
+        <label for="appointmentTime">Horário <span aria-hidden="true">*</span></label>
+        <input id="appointmentTime" name="appointmentTime" type="time" value="<%= appointment.appointmentTime %>" required>
+      </div>
+    </div>
+    <div class="field">
+      <label for="notes">Observações <span class="muted">(opcional, até 500 caracteres)</span></label>
+      <textarea id="notes" name="notes" rows="4" maxlength="500"><%= appointment.notes %></textarea>
+    </div>
+    <div class="form-actions">
+      <button class="button" type="submit">Salvar agendamento</button>
+      <a class="button button-secondary" href="/appointments">Cancelar</a>
+    </div>
+  </form>
+</section>
+<%- include('../partials/footer') %>

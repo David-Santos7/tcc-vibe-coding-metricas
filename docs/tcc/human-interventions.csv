@@ -1,0 +1,2 @@
+intervention_id,timestamp,type,description,affected_files,git_ref,evidence,participant
+INT-A-001,2026-11-04T16:39:54.199-03:00,INTERVENCAO_POR_PROMPT,Prompt experimental fornecido pelo pesquisador,,NÃO DISPONÍVEL,docs/tcc/ai-interaction-log.md#P-001,PESQUISADOR

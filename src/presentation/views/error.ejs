@@ -1,0 +1,7 @@
+<%- include('partials/header', { pageTitle: `Erro ${status}` }) %>
+<section class="narrow empty-state">
+  <p class="eyebrow">Erro <%= status %></p>
+  <h1><%= message %></h1>
+  <a class="button" href="/appointments">Voltar aos agendamentos</a>
+</section>
+<%- include('partials/footer') %>

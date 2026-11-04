@@ -1,0 +1,6 @@
+node_modules/
+coverage/
+data/
+package-lock.json
+prompt-vibe-coding-metricas-tcc.md
+vibe-coding-tdd.md

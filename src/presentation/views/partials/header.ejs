@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title><%= pageTitle ? `${pageTitle} | Agenda` : 'Agenda de agendamentos' %></title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <a class="brand" href="/">Agenda</a>
+      <nav aria-label="Navegação principal">
+        <a href="/appointments">Agendamentos</a>
+        <a class="button button-small" href="/appointments/new">Novo agendamento</a>
+      </nav>
+    </header>
+    <main id="conteudo" class="container">

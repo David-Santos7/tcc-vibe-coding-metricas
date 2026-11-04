@@ -1,0 +1,44 @@
+<%- include('../partials/header', { pageTitle: 'Agendamentos' }) %>
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">Agenda</p>
+    <h1>Agendamentos</h1>
+    <p class="muted">Consulte e gerencie os horários marcados.</p>
+  </div>
+  <a class="button" href="/appointments/new">Novo agendamento</a>
+</section>
+
+<% if (appointments.length === 0) { %>
+  <section class="empty-state" aria-labelledby="empty-title">
+    <h2 id="empty-title">Nenhum agendamento ainda</h2>
+    <p>Cadastre o primeiro horário para começar a organizar sua agenda.</p>
+    <a class="button" href="/appointments/new">Criar agendamento</a>
+  </section>
+<% } else { %>
+  <div class="table-wrap">
+    <table>
+      <caption class="visually-hidden">Lista de agendamentos</caption>
+      <thead>
+        <tr>
+          <th scope="col">Cliente</th>
+          <th scope="col">Serviço</th>
+          <th scope="col">Data</th>
+          <th scope="col">Horário</th>
+          <th scope="col"><span class="visually-hidden">Ações</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% appointments.forEach((appointment) => { %>
+          <tr>
+            <td data-label="Cliente"><%= appointment.clientName %></td>
+            <td data-label="Serviço"><%= appointment.service %></td>
+            <td data-label="Data"><time datetime="<%= appointment.appointmentDate %>"><%= appointment.appointmentDate %></time></td>
+            <td data-label="Horário"><time><%= appointment.appointmentTime %></time></td>
+            <td class="actions-cell"><a href="/appointments/<%= encodeURIComponent(appointment.id) %>">Detalhes</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+<% } %>
+<%- include('../partials/footer') %>

@@ -1,0 +1,2 @@
+session_id,run_id,scenario_id,prompt_id,recorded_at,prompt_ref,completeness
+3aaa49f7-f5fc-4272-a178-6a99c49d8fa8,RUN-A-20261104-01,A,P-001,2026-11-04T16:39:54.199-03:00,docs/tcc/ai-interaction-log.md#P-001,PARTIAL

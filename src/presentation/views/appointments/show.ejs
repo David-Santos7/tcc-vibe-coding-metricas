@@ -1,0 +1,20 @@
+<%- include('../partials/header', { pageTitle: 'Detalhes do agendamento' }) %>
+<section class="narrow">
+  <p class="eyebrow">Agendamento</p>
+  <div class="page-heading">
+    <h1>Detalhes</h1>
+    <a class="button button-secondary" href="/appointments/<%= encodeURIComponent(appointment.id) %>/edit">Editar</a>
+  </div>
+  <dl class="details">
+    <div><dt>Cliente</dt><dd><%= appointment.clientName %></dd></div>
+    <div><dt>Serviço</dt><dd><%= appointment.service %></dd></div>
+    <div><dt>Data</dt><dd><time datetime="<%= appointment.appointmentDate %>"><%= appointment.appointmentDate %></time></dd></div>
+    <div><dt>Horário</dt><dd><%= appointment.appointmentTime %></dd></div>
+    <div><dt>Observações</dt><dd class="notes"><%= appointment.notes || 'Nenhuma observação.' %></dd></div>
+  </dl>
+  <form action="/appointments/<%= encodeURIComponent(appointment.id) %>/delete" method="post" class="delete-form">
+    <button class="button button-danger" type="submit">Excluir agendamento</button>
+    <a class="text-link" href="/appointments">Voltar à lista</a>
+  </form>
+</section>
+<%- include('../partials/footer') %>
